@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+<h1>{{ .Title }}</h1>
+list view
+
+child pages
+<ul>
+{{ range .Pages }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+{{ end }}
+</ul>
+
+<hr/>
+
+regular pages recursive
+<ul>
+{{ range where .RegularPagesRecursive "Type" "verse_image" }}
+    <li><a href="{{ .RelPermalink }}">{{ .Params.Title }}
+            {{ partial "partials/verse_figure.html" . }}
+    </a></li>
+{{ end }}
+</ul>
+
+
+{{ end }}

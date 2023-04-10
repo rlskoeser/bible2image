@@ -1,0 +1,10 @@
+{{ $image := .Parent.Resources.Get .Params.image }}
+{{ with $image }}
+<figure>
+    <img src="{{ .RelPermalink }}"  alt=""/>
+    <figcaption>
+        {{ with $.Params.Prompt }}<p>prompt: {{ . }}</p>{{ end }}
+        {{ with $.Params.Generator }}<p>Created with {{ . }}</p>{{ end }}
+    </figcaption>
+</figure>
+{{ end }}

@@ -1,0 +1,39 @@
+{{ define "main" }}
+
+Browse by book of the Bible:
+<ul class="sections">
+    {{ range .Pages }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+</ul>
+
+<hr/>
+
+
+<ul class="gallery">
+{{ range shuffle (where .Site.AllPages "Type" "verse_image") }}
+{{ $image := .Parent.Resources.Get .Params.image }}
+    <li><p class="title">{{ .Params.Title }}</p>  {{/* article + title ? */}}
+        {{ with $image }}  {{/* TODO alt text */}}
+        <img src="{{ .RelPermalink }}"  alt=""/>
+        {{ end }}
+        {{ with .Parent.Title }}<p class="reference">{{ . }}</p>{{ end }}
+        {{ with $.Params.Prompt }}<p class="prompt">{{ . }}</p>{{ end }}
+        {{ with $.Params.Generator }}<p class="generator">{{ . }}</p>{{ end }}
+    </a></li>
+{{ end }}
+</ul>
+
+<hr/>
+
+<ul class="detail">
+{{ range shuffle (where .Site.AllPages "Type" "verse_image") }}
+    <li><a href="{{ .RelPermalink }}">{{ .Params.Title }}
+            {{ partial "partials/verse_figure.html" . }}
+    </a></li>
+{{ end }}
+</ul>
+
+
+
+{{ end }}

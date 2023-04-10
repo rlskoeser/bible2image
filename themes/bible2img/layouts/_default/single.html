@@ -1,0 +1,24 @@
+{{ define "main" }}  {{/* TODO: convert to verse image layout and set type #/}}
+
+title <h1>{{ .Title }}</h1>  {{/* something wrong with title */}}
+
+{{/* verse content & reference from parent page */}}
+{{ with .Parent }}
+<blockquote>
+    {{ .Content }}
+    <b>{{ .Title }}</b>
+</blockquote>
+{{ end }}
+
+{{ partial "partials/verse_figure.html" . }}
+
+{{ with .Params.tags }}
+  <p>{{ delimit . ", " }}</p>
+{{ end }}
+
+<hr/>
+
+{{/* define "header" }}{{ partial "page-header.html" . }}{{ end */}}
+
+content = {{ .Content }}
+{{ end }}

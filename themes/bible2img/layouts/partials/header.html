@@ -1,0 +1,15 @@
+<header>
+    <strong><a href="/">Bible2Image</a></strong>
+
+   {{ if .Ancestors }}
+    <nav aria-label="breadcrumb">
+      <ul>
+        {{ range .Ancestors.Reverse }}
+         <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+        {{ end }}
+        <li>{{ .Title }}</li>
+      </ul>
+    </nav>
+    {{ end }}
+
+</header>

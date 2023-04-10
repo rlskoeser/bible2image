@@ -1,0 +1,8 @@
+baseURL: 'http://example.org/'
+languageCode: 'en-us'
+title: 'Bible2Image'
+theme: "bible2img"
+
+taxonomies:
+  tag: tags
+  generator: generators
