@@ -1,0 +1,3 @@
+---
+title: Exodus 29
+---

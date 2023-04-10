@@ -18,6 +18,9 @@ hr {
     clear: both;
 }
 
+/* Gallery styles for index page on desktop: diamond grid with rows of 3 then 4.
+   For mobile should probably do rows of 1 and 2. */
+
 ul.gallery {
     margin: 0;
     padding: 0;
@@ -31,7 +34,7 @@ ul.gallery {
     --half-d: 12vw; /* half the diagonal */
 
     padding-bottom: 150px;
-    padding-top: 12vw;
+    padding-top: var(--half-d);
 }
 
 ul.gallery li {
@@ -39,16 +42,12 @@ ul.gallery li {
     display: block;
     width: var(--a);
     height: var(--a);
-    margin-top:  calc(-12vw + 30px); /* move up to make room fo rnext row */
+    margin-top:  calc(-12vw + 30px); /* move up to make room for the next row */
 
     position: relative;
 
     /*border: 1px solid green;*/
-   /* transform:rotate(45deg);*/
     overflow: hidden;
-
-/*    height: 150px;*/
-
 }
 
 ul.gallery li:nth-of-type(7n + 1) {
