@@ -1,4 +1,4 @@
-baseURL: 'http://example.org/'
+baseURL: 'http://rlskoeser.github.io/bible2image/'
 languageCode: 'en-us'
 title: 'Bible2Image'
 theme: "bible2img"
