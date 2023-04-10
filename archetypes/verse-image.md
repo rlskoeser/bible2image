@@ -6,5 +6,5 @@ image:  {{ getenv "HUGO_POST_IMG" }}
 prompt:
 tags:
     -
-generators:
+generator:
 ---

@@ -1,6 +1,6 @@
 {{ define "main" }}  {{/* TODO: convert to verse image layout and set type #/}}
 
-title <h1>{{ .Title }}</h1>  {{/* something wrong with title */}}
+<h1>{{ .Title }}</h1>
 
 {{/* verse content & reference from parent page */}}
 {{ with .Parent }}
@@ -19,6 +19,6 @@ title <h1>{{ .Title }}</h1>  {{/* something wrong with title */}}
 <hr/>
 
 {{/* define "header" }}{{ partial "page-header.html" . }}{{ end */}}
-
-content = {{ .Content }}
+{{/* NOTE: not including actual page content right now; should create separate layout for images */}}
+{{/* .Content */}}
 {{ end }}

@@ -1,19 +1,12 @@
 {{ define "main" }}
 
-Browse by book of the Bible:
-<ul class="sections">
-    {{ range .Pages }}
-    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    {{ end }}
-</ul>
-
+{{ .Content }}
 <hr/>
-
 
 <ul class="gallery">
 {{ range shuffle (where .Site.AllPages "Type" "verse_image") }}
 {{ $image := .Parent.Resources.Get .Params.image }}
-    <li><p class="title">{{ .Params.Title }}</p>  {{/* article + title ? */}}
+    <li><a href="{{ .RelPermalink }}"><div class="title">{{ .Params.Title }}</div>  {{/* article + title ? */}}
         {{ with $image }}  {{/* TODO alt text */}}
         <img src="{{ .RelPermalink }}"  alt=""/>
         {{ end }}
@@ -26,6 +19,17 @@ Browse by book of the Bible:
 
 <hr/>
 
+Browse by book of the Bible:
+<ul class="sections">
+    {{ range .Pages }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+</ul>
+
+
+{{/*
+
+
 <ul class="detail">
 {{ range shuffle (where .Site.AllPages "Type" "verse_image") }}
     <li><a href="{{ .RelPermalink }}">{{ .Params.Title }}
@@ -33,7 +37,7 @@ Browse by book of the Bible:
     </a></li>
 {{ end }}
 </ul>
-
+*/}}
 
 
 {{ end }}

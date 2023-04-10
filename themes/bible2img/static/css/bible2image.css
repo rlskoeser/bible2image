@@ -1,3 +1,13 @@
+:root {
+  --primary: #3949ab;
+}
+
+figure {
+    margin: auto;
+    text-align: center;
+}
+
+
 ul.sections li {
     float: left;
     padding: 10px;
@@ -9,71 +19,112 @@ hr {
 }
 
 ul.gallery {
-    display: grid;
-    grid-template-columns: auto auto;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+
+    /* square diagonal */
+    --d: 24vw;   /* 25% of container for four per row max */
+    --a: calc(24w / 1.4142);  /* side of the square */
+    --half-d: 12vw; /* half the diagonal */
 
     padding-bottom: 150px;
+    padding-top: 12vw;
 }
 
 ul.gallery li {
     list-style-type: none;
+    display: block;
+    width: var(--a);
+    height: var(--a);
+    margin-top:  calc(-12vw + 30px); /* move up to make room fo rnext row */
 
     position: relative;
 
-    height: 150px;
+    /*border: 1px solid green;*/
+   /* transform:rotate(45deg);*/
+    overflow: hidden;
 
+/*    height: 150px;*/
+
+}
+
+ul.gallery li:nth-of-type(7n + 1) {
+    /* first out of every seven items (first of every row of three) is indented by half the diagonal */
+    padding-left: var(--half-d);
+}
+
+/* every other row on desktop (4 through 7) */
+ul.gallery li:nth-of-type(7n), ul.gallery li:nth-of-type(7n-1), ul.gallery li:nth-of-type(7n-2), ul.gallery li:nth-of-type(7n-3) {
+    /*border: 3px solid yellow;*/
+    /*transform: translate(0, calc(-12vw + 30px));*/
 }
 
 ul.gallery li img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 300px;
+    max-width: var(--d);
     clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
 }
 
-ul.gallery li .title {
+.gallery li .title {
     display: inline-block;
-    width: 250px;
     position: absolute;
-    max-width: 220px;
-    /*border: 1px solid green;*/
-    z-index: 2;
-    max-height: 2em;
-    overflow: hidden;
+    top: var(--half-d);
+    width: var(--a);
+    max-width: var(--a);
+    text-align: left;
+    transform-origin: left;
+    transform:rotate(45deg);
+    padding: 1px 5px 0 12px;
+    font-size: smaller;
 
+    /*max-width: 220px;*/
+    /*border: 1px solid green; */
+    z-index: 2;
+    /*max-height: 2em;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+/*
     background-color: rgba(0, 0,0, 0.35);
     top: 80%;
     left: 0;
-    padding-left: 5px;
-    transform-origin: left bottom;
-    transform:rotate(45deg);
+    padding-left: 5px; */
 }
 
-ul.gallery li .reference {
-    display: inline-block;
-    width: 250px;
-    position: absolute;
-    max-width: 220px;
-    /*border: 1px solid green;*/
-    z-index: 2;
-    max-height: 2em;
-    overflow: hidden;
 
-    background-color: rgba(0, 0,0, 0.35);
+.gallery .reference {
+    display: inline-block;
+    position: absolute;
+    top: var(--half-d);
+    right: 0;
+    width: var(--a);
+    max-width: var(--a);
+    text-align: left;
+    transform-origin: right;
+    transform:rotate(-45deg);
+    padding: 1px 12px 0 5px;
+    font-size: smaller;
+    z-index: 2;
+
+    /* debug
+    border: 1px solid green;
+    background-color: red; */
+/*
+    display: inline-block;
+    position: absolute;
+
+    z-index: 2;
+    overflow: hidden;
     top: 80%;
     right: 0;
     padding-left: 5px;
     text-align: right;
     transform-origin: right bottom;
-    transform:rotate(-45deg);
+    transform:rotate(-45deg);*/
 }
 
-/* every other row on desktop */
-ul.gallery li:nth-of-type(6n), ul.gallery li:nth-of-type(6n-1), ul.gallery li:nth-of-type(6n-2) {
-    /*border: 3px solid green;*/
-    transform: translate(-150px, 0);
-}
+
 
 
 @media (min-width: 400px) {

@@ -1,5 +1,5 @@
 ---
-title: the glory of the Lord appeared in the cloud
+title: glory of the Lord in the cloud
 type: verse_image
 date: 2022-11-28
 image:  "glory-cloud.png"

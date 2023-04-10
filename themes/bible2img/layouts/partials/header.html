@@ -4,10 +4,10 @@
    {{ if .Ancestors }}
     <nav aria-label="breadcrumb">
       <ul>
-        {{ range .Ancestors.Reverse }}
+        {{ range first 2 .Ancestors.Reverse  }}
          <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
         {{ end }}
-        <li>{{ .Title }}</li>
+        <li>{{ if eq .Page.Type "verse_image" }}{{ .Parent.Title }} {{ end }}{{ .Title }}</li>
       </ul>
     </nav>
     {{ end }}

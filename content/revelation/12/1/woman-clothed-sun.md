@@ -1,5 +1,5 @@
 ---
-title: A woman clothed with the sun
+title: woman clothed with the sun
 date: 2022-11-28
 image:  woman-clothed-sun.png
 prompt: "a woman clothed with the sun, with the moon under her feet and a crown of twelve stars on her head, digital art"
