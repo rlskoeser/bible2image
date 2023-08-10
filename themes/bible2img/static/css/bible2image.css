@@ -93,12 +93,14 @@ ul.gallery li img {
 
 
 .gallery .reference {
-    display: inline-block;
+    display: block;
     position: absolute;
     top: var(--half-d);
     right: 0;
-    width: var(--a);
+    width: 45%;
+    /*width: var(--a);*/
     max-width: var(--a);
+    /*min-width: var(--a);*/
     text-align: left;
     transform-origin: right;
     transform:rotate(-45deg);
@@ -106,9 +108,9 @@ ul.gallery li img {
     font-size: smaller;
     z-index: 2;
 
-    /* debug
+    /* debug */
     border: 1px solid green;
-    background-color: red; */
+    background-color: red;
 /*
     display: inline-block;
     position: absolute;
